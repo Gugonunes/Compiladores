@@ -84,8 +84,7 @@ Virgula ","
 %%
 
 int main(int argc, char* argv[]){
-    FILE*file = fopen("test.l", "r");
-    yyin = file;
+    yyin = fopen(argv[1], "r");
     yylex();
     printf("\n\n\n");
 }
