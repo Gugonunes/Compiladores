@@ -38,11 +38,17 @@ MULTI "*"
 DIV "div"
 AND "e"
 ATRIB ":="
+PontoV ";"
+DoisP ":"
+Virgula ","
 
 %%
 "{"[^}\n]*"}"
 
-; { line++; printf("<PontoV, %d>", line);} 
+\n { line++; printf("\n");} 
+{PontoV} { printf("<PontoV, %d>", line);} 
+{DoisP} { printf("<DoisP, %d>", line);} 
+{Virgula} { printf("<Virgula, %d>", line);} 
 {ATRIB} { printf("<ATRIB, %d>", line); }
 {PROG} { printf("<PROG, %d>", line); }
 {VAR} { printf("<VAR, %d>", line); }
